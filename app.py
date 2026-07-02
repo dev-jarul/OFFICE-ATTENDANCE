@@ -232,7 +232,7 @@ with tab_admin:
     st.subheader("🔐 Panel Kontrol Manajemen Admin")
     password_admin = st.text_input("Masukkan Password Kredensial Admin:", type="password")
     
-    # Validasi Password Admin Terupdate
+    # Validasi Password Admin Terupdate yang Mendukung Server Cloud Streamlit (st.rerun)
     if password_admin == "adminku121":
         st.success("Akses Terverifikasi. Selamat datang Admin.")
         st.write("---")
@@ -275,7 +275,7 @@ with tab_admin:
                     ws_p.append([new_nip, new_nama, new_jabatan])
                     wb.save(FILE_EXCEL)
                     st.success(f"Pegawai {new_nama} berhasil didaftarkan!")
-                    st.experimental_rerun() # Menggunakan versi lama yang kompatibel dengan Python 3.7
+                    st.rerun() # Menggunakan versi modern standar Streamlit Cloud
 
         st.write("---")
         
@@ -302,7 +302,7 @@ with tab_admin:
                         
                 wb.save(FILE_EXCEL)
                 st.success(f"Pegawai dengan NIP {nip_target_hapus} berhasil dihapus dari sistem.")
-                st.experimental_rerun()
+                st.rerun() # Menggunakan versi modern standar Streamlit Cloud
 
         st.write("---")
         
